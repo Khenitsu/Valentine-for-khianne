@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Khianne 💖</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #f9c5d1, #fde2e8);
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: #fff7f9;
+      padding: 35px;
+      border-radius: 25px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      max-width: 380px;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1, h2 {
+      color: #e75480;
+    }
+
+    p {
+      color: #5a4a4f;
+      font-size: 16px;
+    }
+
+    .music {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #7a5c66;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    #yes {
+      background-color: #f28ca8;
+      color: white;
+    }
+
+    #no {
+      background-color: #f3c2cf;
+      position: absolute;
+    }
+
+    .lily {
+      position: fixed;
+      top: -50px;
+      animation: fall linear infinite;
+      z-index: 1;
+      opacity: 0.75;
+      font-size: 24px;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+<div id="lilies"></div>
+
+<div class="card">
+  <h1>Hi Khianne 💕</h1>
+
+  <!-- Your Polished Message -->
+  <p>
+    I wanted to ask you to be my Valentine in a unique way, so I made this website… hehe.<br>
+    I hope it shows you how much effort I put into this just for you 💗
+  </p>
+
+  <h2>Will you be my Valentine? 🌸</h2>
+
+  <button id="yes" onclick="yesClicked()">Yes 💖</button>
+  <button id="no" onmouseover="moveNo()">No 😅</button>
+
+  <div class="music">
+    <p>🎧 This song reminds me of you</p>
+    <iframe style="border-radius:12px"
+      src="https://open.spotify.com/embed/track/2LMkwUfqC6S6s6qDVlEuzV"
+      width="100%" height="80"
+      frameborder="0"
+      allow="encrypted-media">
+    </iframe>
+  </div>
+</div>
+
+<script>
+  // floating lilies
+  const lilies = document.getElementById("lilies");
+  for (let i = 0; i < 20; i++) {
+    const lily = document.createElement("div");
+    lily.className = "lily";
+    lily.innerHTML = "🌸";
+    lily.style.left = Math.random() * 100 + "vw";
+    lily.style.animationDuration = (6 + Math.random() * 6) + "s";
+    lily.style.fontSize = (18 + Math.random() * 20) + "px";
+    lilies.appendChild(lily);
+  }
+
+  function yesClicked() {
+    document.body.innerHTML = `
+      <h1 style="color:#e75480;">YAY 💕</h1>
+      <p>Thank you for saying yes, Khianne 💗</p>
+    `;
+  }
+
+  function moveNo() {
+    const btn = document.getElementById("no");
+    btn.style.left = Math.random() * (window.innerWidth - 100) + "px";
+    btn.style.top = Math.random() * (window.innerHeight - 50) + "px";
+  }
+</script>
+
+</body>
+</html>
